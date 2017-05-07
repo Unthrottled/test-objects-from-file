@@ -10,13 +10,13 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static io.acari.repositories.ProgrammerRepository.newProgrammerRepository;
 
 public class TestDataProvider {
-    private static final List<Programmer> programmers = new LinkedList<>();
+    private static final Map<String, Programmer> programmers = new LinkedHashMap<>();
 
     static {
         Path testDataFile = Paths.get("src","test", "resources", "programmers.data").toAbsolutePath();
@@ -48,7 +48,8 @@ public class TestDataProvider {
             try (ObjectInputStream in = new ObjectInputStream(Files.newInputStream(testDataFile))) {
                 try {
                     while (true) {
-                        programmers.add((Programmer) in.readObject());
+                        Programmer programmer = (Programmer) in.readObject();
+                        programmers.put(programmer.getName(), programmer);
                     }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
@@ -60,7 +61,7 @@ public class TestDataProvider {
         }
     }
 
-    public static List<Programmer> getProgrammers() {
+    public static Map<String, Programmer> getProgrammers() {
         return programmers;
     }
 
