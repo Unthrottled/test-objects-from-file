@@ -13,5 +13,13 @@ public final class NonSerializableComputer {
         this.make = computer.getMake();
     }
 
-
+    @Override
+    public String toString() {
+        return "NonSerializableComputer{" +
+                "model='" + model + '\'' +
+                ", subModel='" + subModel + '\'' +
+                ", ram=" + ram +
+                ", make='" + make + '\'' +
+                '}';
+    }
 }
