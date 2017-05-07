@@ -3,7 +3,6 @@ package io.acari.pojo;
 import java.util.List;
 
 public final class NonSerializableProgrammer {
-    public static final int NULL_LIST = -1;
     private String name;
     private int age;
     private NonSerializableComputer computer;
@@ -24,5 +23,21 @@ public final class NonSerializableProgrammer {
                 ", computer=" + computer +
                 ", languages=" + languages +
                 '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public NonSerializableComputer getComputer() {
+        return computer;
+    }
+
+    public List<String> getLanguages() {
+        return languages;
     }
 }
