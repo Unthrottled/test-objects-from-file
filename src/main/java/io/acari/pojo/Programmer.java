@@ -32,4 +32,14 @@ public class Programmer implements Serializable {
     public List<String> getLanguages() {
         return languages;
     }
+
+    @Override
+    public String toString() {
+        return "Programmer{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", computer=" + computer +
+                ", languages=" + languages +
+                '}';
+    }
 }

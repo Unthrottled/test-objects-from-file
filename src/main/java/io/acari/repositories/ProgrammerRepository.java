@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ProgrammerRepository {
-    public static final int PROGRAMMER_PER_THREAD = 100;
+    public static final int PROGRAMMER_PER_THREAD = 5;
     private static final int THREADS = 4;
     private final SecureRandom secureRandom = new SecureRandom();
     private final Random ranbo = new Random(9001);

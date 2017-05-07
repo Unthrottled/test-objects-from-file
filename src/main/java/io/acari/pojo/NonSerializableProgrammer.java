@@ -1,13 +1,8 @@
 package io.acari.pojo;
 
-import java.io.Externalizable;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectOutput;
-import java.util.ArrayList;
 import java.util.List;
 
-public class NonSerializableProgrammer {
+public final class NonSerializableProgrammer {
     public static final int NULL_LIST = -1;
     private String name;
     private int age;
@@ -19,5 +14,15 @@ public class NonSerializableProgrammer {
         this.age = programmer.getAge();
         this.computer = new NonSerializableComputer(programmer.getComputer());
         this.languages = programmer.getLanguages();
+    }
+
+    @Override
+    public String toString() {
+        return "NonSerializableProgrammer{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", computer=" + computer +
+                ", languages=" + languages +
+                '}';
     }
 }

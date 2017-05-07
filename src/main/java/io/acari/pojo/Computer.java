@@ -31,4 +31,14 @@ public class Computer implements Serializable {
     public String getMake() {
         return make;
     }
+
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "model='" + model + '\'' +
+                ", subModel='" + subModel + '\'' +
+                ", ram=" + ram +
+                ", make='" + make + '\'' +
+                '}';
+    }
 }

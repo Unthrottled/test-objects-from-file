@@ -1,6 +1,6 @@
 package io.acari.pojo;
 
-public class NonSerializableComputer {
+public final class NonSerializableComputer {
     private String model;
     private String subModel;
     private int ram;
