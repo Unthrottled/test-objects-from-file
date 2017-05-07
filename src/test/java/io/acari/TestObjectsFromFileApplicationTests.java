@@ -13,7 +13,7 @@ public class TestObjectsFromFileApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		TestDataProvider.getProgrammers().parallelStream().forEach(System.out::println);
+		TestDataProvider.getProgrammers().values().parallelStream().forEach(System.out::println);
 	}
 
 }
