@@ -16,7 +16,7 @@ import static io.acari.repositories.ProgrammerRepository.newProgrammerRepository
 
 public class TestDataCreater {
     private static final Path TEST_DATA_FILE = Paths.get("src", "test", "resources", "programmers.data").toAbsolutePath();
-    private static final Path TEST_DATA_FILE_1 = Paths.get("src", "test", "resources", "programmers.json").toAbsolutePath();
+    private static final Path TEST_JSON_DATA_FILE = Paths.get("src", "test", "resources", "programmers.json").toAbsolutePath();
     private static final Gson GSON = new Gson();
 
     public Path fetchSerializableObjectFile() {
@@ -42,7 +42,7 @@ public class TestDataCreater {
     }
 
     public Path fetchJSONFile(){
-        if (needToWriteToFile(TEST_DATA_FILE_1)) {
+        if (needToWriteToFile(TEST_JSON_DATA_FILE)) {
             Consumer<Path> jsonWriter = path -> {
                 try (BufferedWriter out = Files.newBufferedWriter(path)) {
                     newProgrammerRepository().getProgrammers()
@@ -59,9 +59,9 @@ public class TestDataCreater {
                     e.printStackTrace();
                 }
             };
-            createData(TEST_DATA_FILE_1, jsonWriter);
+            createData(TEST_JSON_DATA_FILE, jsonWriter);
         }
-        return TEST_DATA_FILE_1;
+        return TEST_JSON_DATA_FILE;
     }
 
     private void createData(Path testDataFile, Consumer<Path> consumer) {
