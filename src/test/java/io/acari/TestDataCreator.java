@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 
 import static io.acari.repositories.ProgrammerRepository.newProgrammerRepository;
 
-public class TestDataCreater {
+public class TestDataCreator {
     private static final Path TEST_DATA_FILE = Paths.get("src", "test", "resources", "programmers.data").toAbsolutePath();
     private static final Path TEST_JSON_DATA_FILE = Paths.get("src", "test", "resources", "programmers.json").toAbsolutePath();
     private static final Gson GSON = new Gson();

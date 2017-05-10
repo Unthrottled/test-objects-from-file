@@ -21,10 +21,10 @@ public class TestDataProvider {
     private static final Gson GSON = new Gson();
 
     static {
-        TestDataCreater testDataCreater = new TestDataCreater();
-        Path path = testDataCreater.fetchSerializableObjectFile();
+        TestDataCreator testDataCreator = new TestDataCreator();
+        Path path = testDataCreator.fetchSerializableObjectFile();
         programmers = createProgrammersFromFile(path);
-        nonSerialProgrammers = createProgrammersFromJSON(testDataCreater.fetchJSONFile());
+        nonSerialProgrammers = createProgrammersFromJSON(testDataCreator.fetchJSONFile());
     }
 
     private static Map<String, NonSerializableProgrammer> createProgrammersFromJSON(Path path) {
