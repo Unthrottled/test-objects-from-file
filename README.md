@@ -15,8 +15,9 @@ Once the repository is on your machine, in order to boot up the server do the fo
 
     gradle test
         
+This command will output all of the tests', that are run, standard output.        
         
-The gradle will output a index.html file in the build/reports/tests/test/ of the repository. 
+The gradle will also output a index.html file in the build/reports/tests/test/ of the repository. 
 Somewhere in there you should find the standard outputs of the tests run.
 
 

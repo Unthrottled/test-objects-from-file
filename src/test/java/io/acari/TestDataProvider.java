@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,9 +16,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TestDataProvider {
+    private static final Gson GSON = new Gson();
     private static Map<String, Programmer> programmers;
     private static Map<String, NonSerializableProgrammer> nonSerialProgrammers = new LinkedHashMap<>();
-    private static final Gson GSON = new Gson();
 
     static {
         TestDataCreator testDataCreator = new TestDataCreator();
