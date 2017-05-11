@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,6 +25,10 @@ public class TestDataProvider {
         TestDataCreator testDataCreator = new TestDataCreator();
         Path path = testDataCreator.fetchSerializableObjectFile();
         programmers = createProgrammersFromFile(path);
+        //This is the first time running the code
+        //So there is no JSON File created, so we will create it in the resources directory
+        //of the project and return the reference to the newly created file to the following
+        //method that in turn create the objects from the created file.
         nonSerialProgrammers = createProgrammersFromJSON(testDataCreator.fetchJSONFile());
     }
 
