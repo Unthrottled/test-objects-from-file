@@ -1,6 +1,6 @@
 # Test Objects from File
 
-This is a Spring-Boot project consisting of almost all of the examples provided in this [post](http://blog.acari.io/java/2017/05/01/Hazelcast-Performance-Serialization.html).
+This is a Spring-Boot project consisting of almost all of the examples provided in this [post](http://blog.acari.io/2017/05/07/Objects-from-file.html).
 Which covers how to write Java objects to a file and how is this useful.
 
 To run the sample you will need:
